@@ -1,23 +1,19 @@
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import {useState} from 'react';
-import {Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import './style.css';
+import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 export const MainPage = ()=> {
   
-  const [chatType, setChatType] = useState('politic');
+  const history = useHistory();
   
   return (
       <div className='chat-nav'>
 
         <ButtonGroup  variant="contained" aria-label="outlined primary button group">
-          <Link to='/profile'>
-            <Button variant="outlined" onClick={()=> setChatType('social')}>PROFILE PAGE</Button>
-          </Link>
-          <Link to='/chats'>
-            <Button variant="outlined" onClick={()=> setChatType('social')}>CHAT PAGE</Button>
-          </Link>
+            <Button onClick={()=> history.push('/profile')} variant="outlined">PROFILE PAGE</Button>
+            <Button onClick={()=> history.push('/navpage')} variant="outlined">CHAT PAGE</Button>
         </ButtonGroup>
 
       </div>

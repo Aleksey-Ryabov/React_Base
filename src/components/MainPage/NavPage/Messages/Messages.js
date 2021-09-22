@@ -60,9 +60,9 @@ export const Messages = ()=> {
                 })}
                 
                 <div className="messages-input">
-                    <TextField className={classes.input} sty ref={ref} onChange={(event) => setUser(event.target.value)} value={user} type="text" required id="standard-required" label="Введите свое имя"/>
-                    <TextField sty ref={ref} onChange={(event) => setComment(event.target.value)} type="text"  required id="standard-required" label="Ваш комментарий"/><br />
-                    <Button className={classes.root} onClick={getNewComment} variant="outlined" >ОТПРАВИТЬ КОММЕНТАРИЙ</Button>
+                    <TextField className={classes.input} style={{'marginRight': '30px'}} ref={ref} onChange={(event) => setUser(event.target.value)} value={user} type="text" required id="standard-required" label="Введите свое имя"/>
+                    <TextField ref={ref} onChange={(event) => setComment(event.target.value)} type="text"  required id="standard-required" label="Ваш комментарий"/><br />
+                    <Button className={classes.root} style={{'marginTop': '20px'}} onClick={getNewComment} variant="outlined">ОТПРАВИТЬ КОММЕНТАРИЙ</Button>
                 </div>
 
             </>
