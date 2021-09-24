@@ -5,9 +5,12 @@ import {Profile} from './components/MainPage/NavPage/Profile/Profile';
 import {NavPage} from './components/MainPage/NavPage/NavPage';
 import {Chats} from './components/MainPage/NavPage/Chats/Chats';
 import {ChatsInfo} from './components/MainPage/NavPage/ChatsInfo/ChatsInfo';
+import {useSelector} from 'react-redux'
 
 function App() {
-  
+
+  const todo = useSelector(state => state.todoList)
+
   return (
     <div className="App">
       <Router basename='/#/'>
