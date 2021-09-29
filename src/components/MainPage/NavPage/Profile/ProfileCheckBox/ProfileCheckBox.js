@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import ChangeState from "../../../../../actions/CheckBoxAction/CheckBoxAction";
+import ChangeState from "../../../../../store/actions/ChangeState/ChangeState";
 
 
 export const ProfileCheckBox = ()=> {
