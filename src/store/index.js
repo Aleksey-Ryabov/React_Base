@@ -1,7 +1,9 @@
-import {combineReducers, createStore} from 'redux';
+import {applyMiddleware, combineReducers, createStore} from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import chatsReduce from './reducers/chats';
 import messageReduce from './reducers/messages';
+import thunk from 'redux-thunk';
+
 
 const allReducers = combineReducers({
     chatsReduce,
@@ -9,6 +11,6 @@ const allReducers = combineReducers({
 });
 
 
-export const store = createStore(allReducers,composeWithDevTools());
+export const store = createStore(allReducers,composeWithDevTools(applyMiddleware(thunk)));
 
 

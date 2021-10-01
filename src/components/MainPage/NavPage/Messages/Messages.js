@@ -23,7 +23,6 @@ const useStyles = makeStyles({
     }
   });
 
-
 export const Messages = ()=> {
 
     const messageDispatch = useDispatch();
@@ -32,8 +31,11 @@ export const Messages = ()=> {
     const [comment, setComment] = useState('');
     const ref = useRef(null);
     const classes = useStyles();
+    
     const getNewComment = (userName, commentUser)=> {
-        messageDispatch(messageAddAction(userName, commentUser))
+        setTimeout(()=> {
+            messageDispatch(messageAddAction(userName, commentUser))
+        }, 5000)
     }
 
         return (
