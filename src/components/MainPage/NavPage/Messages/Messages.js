@@ -4,8 +4,9 @@ import Button from '@mui/material/Button';
 import { makeStyles } from '@material-ui/styles';
 import './messagesStyle.css'
 import { useDispatch, useSelector } from 'react-redux';
-import messageAddAction from '../../../../store/actions/messageAddAction';
+import { addComment, addUser, addMessage } from '../../../../store/actions/messageAddAction';
 import SendIcon from '@mui/icons-material/Send';
+
 
 const useStyles = makeStyles({
     root: {
@@ -25,17 +26,20 @@ const useStyles = makeStyles({
 
 export const Messages = ()=> {
 
-    const messageDispatch = useDispatch();
-    const messages = useSelector(state => state.messageReduce);
-    const [user, setUser] = useState('');
-    const [comment, setComment] = useState('');
-    const ref = useRef(null);
+    const dispatch = useDispatch();
+    const messages = useSelector(state => state.messageReduce.chatComment);
+    const userName = useSelector(state => state.messageReduce.user);
+    const commentUser = useSelector(state => state.messageReduce.comment);
     const classes = useStyles();
-    
-    const getNewComment = (userName, commentUser)=> {
-        setTimeout(()=> {
-            messageDispatch(messageAddAction(userName, commentUser))
-        }, 5000)
+
+    const getUser = (user)=> {
+        dispatch(addUser(user))
+    }
+    const getComment = (comment)=> {
+        dispatch(addComment(comment))
+    }
+    const getNewComment = ()=> {
+            dispatch(addMessage())
     }
 
         return (
@@ -51,10 +55,10 @@ export const Messages = ()=> {
                 
                 <div className="messages-input">
                     <div className='message-input-wrap'> 
-                        <TextField className={classes.input} style={{'marginRight': '30px'}} ref={ref} onChange={(event) => setUser(event.target.value)} value={user} type="text" required id="standard-required" label="Введите свое имя"/>
-                        <TextField ref={ref} onChange={(event) => setComment(event.target.value)} type="text"  required id="standard-required" label="Ваш комментарий"/><br />
+                        <TextField className={classes.input} style={{'marginRight': '30px'}} onChange={(event) => getUser(event.target.value)} type="text" required id="standard-required" label="Введите свое имя"/>
+                        <TextField onChange={(event) => getComment(event.target.value)} type="text"  required id="standard-required" label="Ваш комментарий"/><br />
                     </div>
-                    <Button className={classes.root} onClick={()=> getNewComment(user, comment)} variant="outlined" style={{'margin-bottom':'20px'}} endIcon={<SendIcon />}>
+                    <Button className={classes.root} onClick={()=> getNewComment(userName, commentUser)} variant="outlined" style={{'marginBottom':'20px'}} endIcon={<SendIcon />}>
                         ОТПРАВИТЬ КОММЕНТАРИЙ
                     </Button>
                 </div>
