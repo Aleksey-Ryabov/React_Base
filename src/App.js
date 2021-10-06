@@ -5,7 +5,9 @@ import {Profile} from './components/MainPage/NavPage/Profile/Profile';
 import {NavPage} from './components/MainPage/NavPage/NavPage';
 import {Chats} from './components/MainPage/NavPage/Chats/Chats';
 import {ChatsInfo} from './components/MainPage/NavPage/ChatsInfo/ChatsInfo';
-import {useSelector} from 'react-redux'
+import {useSelector} from 'react-redux';
+import { StarWars } from './components/MainPage/NavPage/StarWars/StarWars';
+
 
 function App() {
 
@@ -16,6 +18,7 @@ function App() {
       <Router basename='/#/'>
         <Switch>
           <Route exact path='/' component={MainPage}/>
+          <Route exact path='/starwars' component={StarWars}/>
           <Route exact path='/profile' component={Profile} />
           <Route exact path='/navpage' component={NavPage} />
           <Route exact path='/chats' component={Chats} />
