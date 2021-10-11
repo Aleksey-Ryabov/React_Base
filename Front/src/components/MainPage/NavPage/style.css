@@ -1,0 +1,15 @@
+.chat-element {
+    margin-bottom: 20px;
+    border: 1px solid orange;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.messagesUI-p {
+    font-size:30px;
+    font-weight: 600;
+}
+
+.return-button {
+    margin-bottom: 20px;
+}
