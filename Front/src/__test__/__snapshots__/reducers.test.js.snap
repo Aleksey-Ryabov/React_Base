@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`returns correct state after ADD_USER action 1`] = `
+Object {
+  "0": Object {
+    "comment": "",
+    "user": "",
+  },
+  "user": "new User",
+}
+`;

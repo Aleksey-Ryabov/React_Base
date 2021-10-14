@@ -4,12 +4,8 @@
 }
 
 .profile-wrap {
-    width: 800px;
-    display: flex;
     margin: 0 auto;
-}
-
-.profile-checkbox {
-    margin-right: 100px;
+    width: 450px;
+    display: flex;
     margin-top: 50px;
 }

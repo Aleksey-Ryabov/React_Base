@@ -12,11 +12,9 @@ import { PrivateChat } from './components/MainPage/NavPage/Chats/PrivateChat/Pri
 
 function App() {
 
-  const todo = useSelector(state => state.todoList)
-
   return (
     <div className="App">
-      <Router basename='/#/'>
+      <Router basename='/#/' >
         <Switch>
           <Route exact path='/' component={MainPage}/>
           <Route exact path='/starwars' component={StarWars}/>
