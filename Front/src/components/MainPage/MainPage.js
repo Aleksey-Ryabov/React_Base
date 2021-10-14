@@ -12,7 +12,7 @@ export const MainPage = ()=> {
       <div className='chat-nav'>
 
         <ButtonGroup  variant="contained" aria-label="outlined primary button group">
-            <Button onClick={()=> history.push('/profile')} variant="outlined">PROFILE PAGE</Button>
+            <Button onClick={()=> history.push('/profile')} variant="outlined" data-testid='profile'>PROFILE PAGE</Button>
             <Button onClick={()=> history.push('/navpage')} variant="outlined">CHAT PAGE</Button>
             <Button onClick={()=> history.push('/starwars')} variant="outlined">STAR WARS</Button>
         </ButtonGroup>

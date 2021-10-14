@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 
 export const Chats =()=> {
 
-    const todoChat = useSelector(state => state.chatsReduce);
+    const todoChat = useSelector(state => state.chatsReduce.chats);
     const dispatchChat = useDispatch();
     const access = useSelector(state => state.userAuthReduce);
     const classes = useStyles();
@@ -32,6 +32,7 @@ export const Chats =()=> {
         dispatchChat(ChatDelete(id))
     }
 
+    console.log('TODOCHAT', todoChat)
 
     return (
         <>  
@@ -50,7 +51,9 @@ export const Chats =()=> {
                             <Paper elevation={10} className="messagesUI">
                                 <div className='chat-elem-body'>
                                     <p className="messagesUI-p">ЧАТ № {elem.id}</p>
-                                    <Button style={{'marginBottom': '20px'}} onClick={()=> history.push(`/chats/${elem.id}`)} variant="outlined">Перейти на страницу чата № {elem.id}</Button>
+                                    <Link className='chat-link' to={`/chats/${elem.id}`} >
+                                        <Button style={{'marginBottom': '20px'}} /*onClick={()=> history.push(`/chats/${elem.id}`)}*/ variant="outlined">Перейти на страницу чата № {elem.id}</Button>
+                                    </Link>
                                     <Messages id={elem.id} />
                                     <Button onClick={()=>chatDelete(elem.id)} style={{'marginBottom': '20px'}} variant="outlined" startIcon={<DeleteIcon />}> Удалить чат </Button>
                                 </div>

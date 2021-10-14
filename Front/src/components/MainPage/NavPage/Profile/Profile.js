@@ -13,9 +13,6 @@ export const Profile =()=> {
     
     return (
         <div className='profile-wrap'>
-            <div className='profile-checkbox'>
-                    <ProfileCheckBox />
-            </div>
             <div>
                 <img className='profile-img' style={{'width': '350px'}} src={logo}/>
                 <p>СТРАНИЦА ПРОФИЛЯ</p> 
